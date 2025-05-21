@@ -62,10 +62,14 @@ public class DoubleLinkedLists01 {
     }
 
     public void print() {
-        Node01 current = head;
-        while (current != null) {
-            current.data.tampil();
-            current = current.next;
+        if (isEmpty()) {
+            System.out.println("Warning: Linked list masih kosong!");
+        } else {
+            Node01 current = head;
+            while (current != null) {
+                current.data.tampil();
+                current = current.next;
+            }
         }
     }
 
