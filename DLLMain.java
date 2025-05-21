@@ -13,7 +13,8 @@ public class DLLMain {
         System.out.println("3. Hapus di awal");
         System.out.println("4. Hapus di akhir");
         System.out.println("5. Tampilkan data");
-        System.out.println("7. Cari Mahasiswa berdasarkan NIM");
+        System.out.println("6. Cari Mahasiswa berdasarkan NIM");
+        System.out.println("7. Sisipkan data setelah NIM tertentu");
         System.out.println("0. Keluar");
         System.out.print("Pilih menu: ");
         pilihan = scan.nextInt();
@@ -41,6 +42,12 @@ public class DLLMain {
                 } else {
                     System.out.println("Data tidak ditemukan.");
                 }
+            }
+            case 7 -> {
+                System.out.print("Masukkan NIM yang akan disispkan setelahnya: ");
+                String keyNim = scan.nextLine();
+                Mahasiswa01 mhs = inputMahasiswa(scan);
+                list.insertAfter(keyNim, mhs);
             }
             case 0 -> System.out.println("Keluar dari program.");
             default -> System.out.println("Pilihan tidak valid!");
